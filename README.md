@@ -1,4 +1,4 @@
-Role Name
+ansible-grafana
 =========
 
 Role to install Grafana The leading tool for querying and visualizing time series and metrics.
@@ -22,7 +22,7 @@ Example:
 Role Variables
 --------------
 
-Settable roles can be found at `defaults/grafana.ini.yml`
+Settable role variables can be found at `defaults/grafana.ini.yml`
 
 Example Playbook
 ----------------
