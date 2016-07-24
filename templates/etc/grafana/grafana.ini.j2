@@ -1,0 +1,165 @@
+# {{ ansible_managed }}
+
+app_mode = {{ grafana_app_mode }}
+instance_name = {{ grafana_instance_name }}
+
+[paths]
+data = {{ grafana_paths_data }}
+logs = {{ grafana_paths_logs }}
+plugins = {{ grafana_paths_plugins }}
+
+[server]
+protocol = {{ grafana_server_protocol }}
+http_addr = {{ grafana_server_http_addr }}
+http_port = {{ grafana_server_http_port }}
+domain = {{ grafana_server_domain }}
+enforce_domain = {{ grafana_server_enforce_domain }}
+root_url = {{ grafana_server_root_url }}
+router_logging = {{ grafana_server_router_logging }}
+static_root_path = {{ grafana_server_static_root_path }}
+enable_gzip = {{ grafana_server_enable_gzip }}
+cert_file = {{ grafana_server_cert_file }}
+cert_key = {{ grafana_server_cert_key }}
+
+[database]
+type = {{ grafana_database_type }}
+host = {{ grafana_database_host }}
+name = {{ grafana_database_name }}
+user = {{ grafana_database_user }}
+password = {{ grafana_database_password }}
+ssl_mode = {{ grafana_database_ssl_mode }}
+path = {{ grafana_database_path }}
+
+[session]
+provider = {{ grafana_session_provider }}
+provider_config = {{ grafana_session_provider_config }}
+cookie_name = {{ grafana_session_cookie_name }}
+cookie_secure = {{ grafana_session_cookie_secure }}
+session_life_time = {{ grafana_session_session_life_time }}
+
+[analytics]
+reporting_enabled = {{ grafana_analytics_reporting_enabled }}
+check_for_updates = {{ grafana_analytics_check_for_updates }}
+google_analytics_ua_id = {{ grafana_analytics_google_analytics_ua_id }}
+
+[security]
+admin_user = {{ grafana_security_admin_user }}
+admin_password = {{ grafana_security_admin_password }}
+secret_key = {{ grafana_security_secret_key }}
+login_remember_days = {{ grafana_security_login_remember_days }}
+cookie_username = {{ grafana_security_cookie_username }}
+cookie_remember_name = {{ grafana_security_cookie_remember_name }}
+disable_gravatar = {{ grafana_security_disable_gravatar }}
+data_source_proxy_whitelist = {{ grafana_security_data_source_proxy_whitelist }}
+
+[snapshots]
+external_enabled = {{ grafana_snapshots_external_enabled }}
+external_snapshot_url = {{ grafana_snapshots_external_snapshot_url }}
+external_snapshot_name = {{ grafana_snapshots_external_snapshot_name }}
+
+[users]
+allow_sign_up = {{ grafana_users_allow_sign_up }}
+allow_org_create = {{ grafana_users_allow_org_create }}
+auto_assign_org = {{ grafana_users_auto_assign_org }}
+auto_assign_org_role = {{ grafana_users_auto_assign_org_role }}
+login_hint = {{ grafana_users_login_hint }}
+default_theme = {{ grafana_users_default_theme }}
+
+[auth.anonymous]
+enabled = {{ grafana_auth_anonymous_enabled }}
+org_name = {{ grafana_auth_anonymous_org_name }}
+org_role = {{ grafana_auth_anonymous_org_role }}
+
+[auth.github]
+enabled = {{ grafana_auth_github_enabled }}
+allow_sign_up = {{ grafana_auth_github_allow_sign_up }}
+client_id = {{ grafana_auth_github_client_id }}
+client_secret = {{ grafana_auth_github_client_secret }}
+scopes = {{ grafana_auth_github_scopes }}
+auth_url = {{ grafana_auth_github_auth_url }}
+token_url = {{ grafana_auth_github_token_url }}
+api_url = {{ grafana_auth_github_api_url }}
+team_ids = {{ grafana_auth_github_team_ids }}
+allowed_organizations = {{ grafana_auth_github_allowed_organizations }}
+
+[auth.google]
+enabled = {{ grafana_auth_google_enabled }}
+allow_sign_up = {{ grafana_auth_google_allow_sign_up }}
+client_id = {{ grafana_auth_google_client_id }}
+client_secret = {{ grafana_auth_google_client_secret }}
+scopes = {{ grafana_auth_google_scopes }}
+auth_url = {{ grafana_auth_google_auth_url }}
+token_url = {{ grafana_auth_google_token_url }}
+api_url = {{ grafana_auth_google_api_url }}
+allowed_domains = {{ grafana_auth_google_allowed_domains }}
+
+[auth.proxy]
+enabled = {{ grafana_auth_proxy_enabled }}
+header_name = {{ grafana_auth_proxy_header_name }}
+header_property = {{ grafana_auth_proxy_header_property }}
+auto_sign_up = {{ grafana_auth_proxy_auto_sign_up }}
+
+[auth.basic]
+enabled = {{ grafana_auth_basic_enabled }}
+
+[auth.ldap]
+enabled = {{ grafana_auth_ldap_enabled }}
+config_file = {{ grafana_auth_ldap_config_file }}
+
+[smtp]
+enabled = {{ grafana_smtp_enabled }}
+host = {{ grafana_smtp_host }}
+user = {{ grafana_smtp_user }}
+password = {{ grafana_smtp_password }}
+cert_file = {{ grafana_smtp_cert_file }}
+key_file = {{ grafana_smtp_key_file }}
+skip_verify = {{ grafana_smtp_skip_verify }}
+from_address = {{ grafana_smtp_from_address }}
+
+[emails]
+welcome_email_on_sign_up = {{ grafana_emails_welcome_email_on_sign_up }}
+
+[log]
+mode = {{ grafana_log_mode }}
+level = {{ grafana_log_level }}
+
+[log.console]
+level = {{ grafana_log_console_level }}
+format = {{ grafana_log_console_format }}
+
+[log.file]
+level = {{ grafana_log_file_level }}
+format = {{ grafana_log_file_format }}
+log_rotate = {{ grafana_log_file_log_rotate }}
+max_lines = {{ grafana_log_file_max_lines }}
+max_size_shift = {{ grafana_log_file_max_size_shift }}
+daily_rotate = {{ grafana_log_file_daily_rotate }}
+max_days = {{ grafana_log_file_max_days }}
+
+[log.syslog]
+level = {{ grafana_log_syslog_level }}
+format = {{ grafana_log_syslog_format }}
+network = {{ grafana_log_syslog_network }}
+address = {{ grafana_log_syslog_address }}
+facility = {{ grafana_log_syslog_facility }}
+tag = {{ grafana_log_syslog_tag }}
+
+[event_publisher]
+enabled = {{ grafana_event_publisher_enabled }}
+rabbitmq_url = {{ grafana_event_publisher_rabbitmq_url }}
+exchange = {{ grafana_event_publisher_exchange }}
+
+[dashboards.json]
+enabled = {{ grafana_dashboards_json_enabled }}
+path = {{ grafana_dashboards_json_path }}
+
+[metrics]
+enabled = {{ grafana_metrics_enabled }}
+interval_seconds = {{ grafana_metrics_interval_seconds }}
+
+[metrics.graphite]
+address = {{ grafana_metrics_graphite_address }}
+
+[grafana_net]
+url = {{ grafana_grafana_net_url }}
+

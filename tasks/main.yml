@@ -1,0 +1,15 @@
+---
+# tasks file for ansible-grafana
+
+- name: include grafana variables
+  include_vars: defaults/grafana.ini.yml
+
+- name: install grafana package
+  yum: name=grafana-{{ grafana_version }} state=present
+
+- name: configure grafana.ini
+  template: src=etc/grafana/grafana.ini.j2 dest=/etc/grafana/grafana.ini
+  notify: restart grafana server
+
+- name: start and enable grafana package
+  service: name=grafana-server state=running enabled=true
