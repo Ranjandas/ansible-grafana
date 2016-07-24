@@ -7,6 +7,11 @@
 - name: install grafana package
   yum: name=grafana-{{ grafana_version }} state=present
 
+- name: set cap if port number less than 1024
+  shell: setcap 'cap_net_bind_service=+ep' /usr/sbin/grafana-server
+  when: ({{ grafana_server_http_port }} <= 1024)
+  changed_when: false
+
 - name: configure grafana.ini
   template: src=etc/grafana/grafana.ini.j2 dest=/etc/grafana/grafana.ini
   notify: restart grafana server
