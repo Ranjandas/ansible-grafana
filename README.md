@@ -1,6 +1,8 @@
 ansible-grafana
 =========
 
+[![Build Status](https://travis-ci.org/Ranjandas/ansible-grafana.svg?branch=master)](https://travis-ci.org/Ranjandas/ansible-grafana)
+
 Role to install Grafana The leading tool for querying and visualizing time series and metrics.
 
 Requirements
